@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lemmings Lite — Replay JSON</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div id="app">
+    <div id="controls">
+      <div class="row">
+        <label>Level:</label>
+        <select id="levelSelect"></select>
+        <button id="startBtn">Start</button>
+        <button id="pauseBtn">Pause</button>
+        <button id="stepBtn">Step</button>
+        <button id="resetBtn">Reset</button>
+      </div>
+
+      <div class="row abilities">
+        <label>Abilities (remaining):</label>
+        <div id="abilityButtons"></div>
+      </div>
+
+      <div class="row">
+        <label>Mode:</label>
+        <select id="modeSelect">
+          <option value="play">Play</option>
+          <option value="replay">Replay</option>
+        </select>
+
+        <button id="saveJsonBtn">Save Replay JSON</button>
+        <button id="loadJsonBtn">Load Replay JSON</button>
+        <input id="jsonFileInput" type="file" accept=".json" style="display:none" />
+      </div>
+
+      <div class="row stats">
+        <span id="timeLabel">Frame: 0</span>
+        <span id="savedLabel">Saved: 0</span>
+        <span id="aliveLabel">Alive: 0</span>
+      </div>
+    </div>
+
+    <canvas id="gameCanvas" width="900" height="480"></canvas>
+
+    <div id="legend">
+      Click a lemming to assign the selected ability. Lemmings spawn at the Entrance (green). Exit is blue.
+    </div>
+  </div>
+
+  <script type="module" src="main.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v8c78df7c7c0f484497ecbca7046644da1771523124516" integrity="sha512-8DS7rgIrAmghBFwoOTujcf6D9rXvH8xm8JQ1Ja01h9QX8EzXldiszufYa4IFfKdLUKTTrnSFXLDkUEOTrZQ8Qg==" data-cf-beacon='{"version":"2024.11.0","token":"4c6229722a6346bc8eb5cb0e5eae5d41","server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

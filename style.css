@@ -1,0 +1,25 @@
+:root{
+  --bg:#111;
+  --panel:#1b1b1b;
+  --accent:#2ea44f;
+  --muted:#9aa0a6;
+  --danger:#d73a49;
+  --glass: rgba(255,255,255,0.03);
+}
+*{box-sizing:border-box;font-family:Inter,system-ui,Arial,Helvetica,sans-serif}
+html,body,#app{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#000);color:#e6edf3}
+#app{display:flex;flex-direction:column;gap:10px;padding:12px;align-items:center}
+#controls{width:920px;background:var(--panel);padding:10px;border-radius:8px;display:flex;flex-direction:column;gap:8px}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+label{color:var(--muted);min-width:70px}
+button,select{background:var(--glass);border:1px solid rgba(255,255,255,0.04);color:#e6edf3;padding:8px 10px;border-radius:6px;cursor:pointer}
+button:hover,select:hover{filter:brightness(1.05)}
+#abilityButtons{display:flex;gap:6px;flex-wrap:wrap}
+.abilityBtn{min-width:84px;padding:8px 10px;border-radius:6px;border:1px solid rgba(0,0,0,0.4);background:#0f1720}
+.abilityBtn.selected{outline:2px solid var(--accent)}
+#gameCanvas{background:#b7e0ff;border-radius:6px;border:6px solid #19324f;box-shadow:0 6px 24px rgba(0,0,0,0.6)}
+#legend{width:920px;text-align:center;color:var(--muted);font-size:13px}
+.stats span{min-width:80px}
+@media (max-width:960px){
+  #controls,#gameCanvas,#legend{width:100%}
+}
