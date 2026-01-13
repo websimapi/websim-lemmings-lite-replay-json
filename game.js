@@ -58,6 +58,7 @@ export function startApp(){
   initRenderer({ TILE, TILE_TYPES, ABILITIES });
   buildUI({
     levels,
+    ABILITIES,
     onLevelChange,
     onStart: ()=> playing = true,
     onPause: ()=> playing = false,

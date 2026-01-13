@@ -1,7 +1,7 @@
 /* ui.js - UI bindings and small helpers */
-import { ABILITIES } from './game.js';
+/* Note: ABILITIES is provided by caller to avoid circular imports */
 
-export function buildUI({ levels, onLevelChange, onStart, onPause, onStep, onReset, onSave, onLoad, onModeChange } = {}) {
+export function buildUI({ levels, ABILITIES = [], onLevelChange, onStart, onPause, onStep, onReset, onSave, onLoad, onModeChange } = {}) {
   const levelSelect = document.getElementById('levelSelect');
   levels.forEach((lvl, i) => {
     const o = document.createElement('option');
