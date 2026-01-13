@@ -49,9 +49,24 @@ const levels = createLevels();
 export let currentLevelIndex = 0;
 
 /* Initialization */
+function onLevelChange(index){
+  currentLevelIndex = index;
+  resetLevel();
+}
+
 export function startApp(){
   initRenderer({ TILE, TILE_TYPES, ABILITIES });
-  buildUI({ levels, onLevelChange, onStart: ()=>playing=true, onPause: ()=>playing=false, onStep: step, onReset: resetLevel, onSave: saveReplay, onLoad: loadReplay, onModeChange: (m)=>mode=m });
+  buildUI({
+    levels,
+    onLevelChange,
+    onStart: ()=> playing = true,
+    onPause: ()=> playing = false,
+    onStep: step,
+    onReset: resetLevel,
+    onSave: saveReplay,
+    onLoad: loadReplay,
+    onModeChange: (m) => { mode = m; }
+  });
   bindCanvasClick(handleCanvasClick);
   resetLevel();
   loop();
